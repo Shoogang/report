@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ADP 4.0 智能工作台 · 设计汇报</title>
+<meta name="description" content="ADP 4.0 智能工作台交互设计汇报 — 一次产品定位推演的完整决策链">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============================================================
+     顶部固定 mini 导航
+     ============================================================ -->
+<nav class="report-nav" aria-label="Sections">
+  <a href="#sec-00">封面</a>
+  <a href="#sec-01">背景</a>
+  <a href="#sec-02">功能</a>
+  <a href="#sec-03">断点</a>
+  <a href="#sec-04">推演 ★</a>
+  <a href="#sec-05">价值</a>
+  <a href="#sec-06">其他</a>
+  <a href="#sec-07">结语</a>
+</nav>
+
+<main class="pages">
+
+<!-- ============================================================
+     SECTION 00 · 封面
+     ============================================================ -->
+<section class="page hero-report" id="sec-00">
+  <div class="hero-meta-top">
+    <div>
+      <div>TENCENT CLOUD ADP</div>
+      <div style="color: var(--text-muted); margin-top: 4px;">DESIGN REVIEW</div>
+    </div>
+    <div class="hmt-right">
+      <div>JIANG ZHONGGANG</div>
+      <div style="color: var(--text-muted); margin-top: 4px;">2026 · MAY</div>
+    </div>
+  </div>
+
+  <div class="hero-center">
+    <div class="hero-version-block">
+      <span class="hero-version-tag">ADP 4.0</span>
+      <span class="hero-version-line">— 智能工作台 · 使用心智</span>
+    </div>
+
+    <h1 class="hero-main-title">
+      当一个开发平台<br>
+      开始拥有<em>"使用"</em>的灵魂
+    </h1>
+
+    <p class="hero-sub-title">
+      本次迭代，我作为交互设计师，<br>
+      用一套可视化推演方案，<br>
+      推动产品在「搭建」与「使用」之间，找到了它的新位置。
+    </p>
+
+    <div class="hero-tag-row">
+      <span class="hero-tag"># 产品定位推演</span>
+      <span class="hero-tag"># 结构化抽象</span>
+      <span class="hero-tag"># 用户心智 vs 技术视角</span>
+      <span class="hero-tag"># 多方平衡</span>
+    </div>
+  </div>
+
+  <div class="hero-meta-bottom">
+    <div class="hmb-item">
+      <div class="hmb-label">汇报对象</div>
+      <div class="hmb-value">设计总监</div>
+    </div>
+    <div class="hmb-item">
+      <div class="hmb-label">核心模块</div>
+      <div class="hmb-value">智能工作台 · 使用沉淀</div>
+    </div>
+    <div class="hmb-item">
+      <div class="hmb-label">设计立场</div>
+      <div class="hmb-value">用方案 push 定位</div>
+    </div>
+    <div class="hmb-item">
+      <div class="hmb-label">阅读时长</div>
+      <div class="hmb-value">≈ 12 min</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 01 · 项目背景
+     ============================================================ -->
+<section class="page" id="sec-01">
+  <div class="sec-num">Section 01 / 项目背景</div>
+  <h2 class="sec-title">从"搭建型平台"<br>到"使用心智"</h2>
+  <p class="sec-lead">在迭代 4.0 之前，ADP 是一个标准的"搭建型"开发平台——而这次迭代要让"使用"心智长出来。</p>
+
+  <!-- 1.1 -->
+  <h3 class="h3-block">1.1 ADP 的过去：一个标准的"搭建型"平台</h3>
+  <div class="shot" style="min-height: 220px;">
+    <div class="shot-tag">图位 01-01</div>
+    <div class="shot-label">ADP 旧版主界面截图</div>
+    <div class="shot-sub">以「应用开发」为主的低代码搭建形态 · 待替换为真实截图</div>
+  </div>
+  <p class="body-p">腾讯云智能体开发平台（ADP）原本的形态，是一个<strong>面向开发者的智能体搭建与开发平台</strong>：</p>
+  <ul class="bullets">
+    <li>它的核心场景是<strong>「搭建 → 发布」的开发链路</strong></li>
+    <li>它的产品定位偏向"开发者搭建好智能体，再把它发布给 C 端客户使用"</li>
+    <li>它的整体心智是 <em>"这是一个工具，用来产出智能体"</em></li>
+  </ul>
+
+  <!-- 1.2 -->
+  <h3 class="h3-block">1.2 上一版本的转折：「智能工作台」首次登场</h3>
+  <div class="shot" style="min-height: 220px;">
+    <div class="shot-tag">图位 01-02</div>
+    <div class="shot-label">智能工作台首次上线时的对话页面截图</div>
+    <div class="shot-sub">标注"对话入口"作为新心智的萌芽 · 待替换</div>
+  </div>
+  <p class="body-p">直到上一个版本，平台菜单里多了一个新成员——<strong>「智能工作台」</strong>。它是一个对话页面，让平台不再只有"低代码搭建/管理"这一种打开方式，<em>多了一种"直接对话使用"的能力</em>。但它当时还只是一个入口，<strong>还没真正撑起"使用"这件事的完整心智</strong>。</p>
+
+  <!-- 1.3 -->
+  <h3 class="h3-block">1.3 4.0 的命题：让"使用"心智长出来</h3>
+  <div class="insight-strip">
+    <strong>4.0 不只是功能堆叠，而是一次"产品灵魂"的重新校准。</strong><br>
+    本次围绕智能工作台做了大量功能迭代，方向只有一个——<strong>让"使用"成为 ADP 与"搭建"并列的另一条主轴</strong>。
+  </div>
+
+  <p class="body-p" style="margin-top: 24px;">这意味着，4.0 要回答两个根本问题：</p>
+  <ul class="bullets">
+    <li><strong>使用心智从哪里长出来？</strong>——产品形态上要有承载使用的"家"</li>
+    <li><strong>使用心智如何与原本的搭建心智共存？</strong>——结构上不能割裂，也不能混乱</li>
+  </ul>
+</section>
+
+<!-- ============================================================
+     SECTION 02 · 4.0 功能全景
+     ============================================================ -->
+<section class="page" id="sec-02">
+  <div class="sec-num">Section 02 / 功能全景</div>
+  <h2 class="sec-title">4.0 做了什么<br>本次聚焦讲什么</h2>
+  <p class="sec-lead">4.0 围绕智能工作台堆叠了 4 类核心功能，但本次汇报，我只把最深的那一项拆开讲。</p>
+
+  <div class="feature-grid">
+    <article class="feat-card">
+      <div class="feat-name">输出物编辑</div>
+      <div class="feat-desc">让对话产出真正"可用"，不止于"看完即走"</div>
+    </article>
+    <article class="feat-card">
+      <div class="feat-name">对话分享</div>
+      <div class="feat-desc">让一次智能对话成为可流通的资产</div>
+    </article>
+    <article class="feat-card">
+      <div class="feat-name">对话式创建智能体</div>
+      <div class="feat-desc">把"搭建"折叠进"使用"，降低创建门槛</div>
+    </article>
+    <article class="feat-card is-hero">
+      <div class="feat-name">使用沉淀</div>
+      <div class="feat-desc">让"用"这件事，第一次有了产品化的"家"——本次汇报的主角</div>
+    </article>
+  </div>
+
+  <div class="spotlight-strip">
+    <span class="ss-tag">本次汇报的主角</span><br>
+    <strong>使用沉淀</strong> 是这次迭代中——交互设计推动力最强、决策链路最完整、最值得拆开来讲的一段故事。
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 03 · 故事开始：使用断点
+     ============================================================ -->
+<section class="page" id="sec-03">
+  <div class="sec-num">Section 03 / 使用断点</div>
+  <h2 class="sec-title">故事开始<br>一个被忽视的"使用断点"</h2>
+  <p class="sec-lead">在产品需求被提出之前，先让我们直面问题——ADP 这个平台，"使用"这件事其实从未被沉淀过。</p>
+
+  <!-- 痛点 1 -->
+  <h3 class="h3-block">3.1 痛点 ① · 员工用智能体，只能靠一条"复制链接"</h3>
+  <div class="shot">
+    <div class="shot-tag">图位 03-01</div>
+    <div class="shot-label">现状流程示意图</div>
+    <div class="shot-sub">开发者搭建完应用 → 复制体验链接 → 员工点开使用<br>"复制链接"这一步是产品化断点</div>
+  </div>
+
+  <p class="body-p">开发者在 ADP 里搭建完一个应用，能很顺畅地把它<strong>发布给 C 端</strong>——微信客服、企微、各种终端渠道，链路清晰、有产品化的承载。</p>
+  <p class="body-p">但如果这个企业，想把智能体<strong>给自己的员工使用</strong>呢？（比如一个员工提效类的金融助手、客服助手、数据分析助手）答案有点尴尬：</p>
+
+  <div class="pain-block">
+    <div class="pb-tag">PAIN POINT 01</div>
+    <div class="pb-title">目前唯一的方式，是复制一条体验链接，让员工点开使用</div>
+    <ul class="pb-list">
+      <li>它没有沉淀为产品内的功能入口</li>
+      <li>它没有"我的应用"这个概念</li>
+      <li>它<strong>没有"家"</strong></li>
+    </ul>
+  </div>
+
+  <div class="insight-strip">
+    这背后反映的是 ADP 原本的<strong>产品定位偏差</strong>——<br>
+    平台原本更偏向"搭建完给 C 端客户用"，<strong>对"给企业自己的员工用"这个场景，是缺位的</strong>。
+  </div>
+
+  <!-- 痛点 2 -->
+  <h3 class="h3-block">3.2 痛点 ② · 应用广场是"广场"，不是"工位"</h3>
+  <div class="shot">
+    <div class="shot-tag">图位 03-02</div>
+    <div class="shot-label">应用广场截图</div>
+    <div class="shot-sub">行业精选 / 全部应用 / 各种官方精品应用陈列<br>每次使用都要重新进入广场 = 体验断点</div>
+  </div>
+
+  <p class="body-p">ADP 还有一个「应用广场」，里面有大量<strong>官方精品应用</strong>，按行业分类陈列——金融、医疗、零售……员工可以直接点进去，跟某个应用对话。但<strong>广场的本质是"逛"，不是"用"</strong>：</p>
+
+  <div class="pain-block">
+    <div class="pb-tag">PAIN POINT 02</div>
+    <div class="pb-title">广场是"逛"的地方，不是"用"的地方</div>
+    <ul class="pb-list">
+      <li>员工每次想用某个应用，都要<strong>重新进广场、重新点开</strong></li>
+      <li>没有"我常用的应用"这件事</li>
+      <li>没有任何"使用沉淀"的能力</li>
+    </ul>
+  </div>
+
+  <!-- 3.3 命题 -->
+  <h3 class="h3-block">3.3 产品诉求 → 设计命题</h3>
+  <p class="body-p">两个痛点合起来看，问题就更清晰了：</p>
+  <div class="insight-strip" style="border-left-color: var(--text-primary); background: var(--report-ink); color: #fff;">
+    ADP 平台里，<strong style="color: #fff;">"使用"这件事是发生过的，但从未被沉淀过。</strong>
+  </div>
+
+  <p class="body-p" style="margin-top: 24px;">基于上述背景，产品给出了明确诉求：</p>
+  <div class="insight-strip">
+    <strong>沉淀一种"应用 → 对话使用"的产品形态，助力员工工作提效。</strong>
+  </div>
+  <p class="body-p" style="margin-top: 16px;">同时，借这次 4.0 的契机，产品还有一个更高维度的目标：</p>
+  <div class="insight-strip">
+    <strong>不仅要凸显 ADP「能搭建」的心智，更要立起「能直接用」的心智。</strong>
+  </div>
+  <p class="body-p" style="margin-top: 16px; color: var(--text-tertiary);">—— 这就是这次设计推演的起点。</p>
+</section>
+
+<!-- ============================================================
+     SECTION 04 · 5 方案推演 ⭐ 核心
+     ============================================================ -->
+<section class="page" id="sec-04">
+  <div class="sec-num">Section 04 / 设计推演 ⭐</div>
+  <h2 class="sec-title">5 个方案<br>1 条决策链</h2>
+  <p class="sec-lead">由于产品方对功能定位本身也不够清晰，交互设计在此次迭代中承担了一个更超前的角色——<strong style="color: var(--text-primary)">用可视化方案，去 push 产品定位</strong>。</p>
+
+  <!-- 决策树 -->
+  <div class="decision-tree">
+    <div class="tree-row">
+      <div class="tree-node tn-a">
+        <div class="tn-label">PLAN A</div>
+        <div class="tn-name">@ 应用</div>
+        <div class="tn-verdict">✕ 生不逢时</div>
+      </div>
+      <div class="tree-arrow">→</div>
+      <div class="tree-node tn-b">
+        <div class="tn-label">PLAN B</div>
+        <div class="tn-name">放进工作台</div>
+        <div class="tn-verdict">★ 我推荐</div>
+      </div>
+      <div class="tree-arrow is-cd">
+        <div>↗</div>
+        <div>↘</div>
+      </div>
+      <div class="tree-cd-wrap">
+        <div class="tree-node tn-c">
+          <div class="tn-label">PLAN C</div>
+          <div class="tn-name">大老板版</div>
+          <div class="tn-verdict">✕ 强反对</div>
+        </div>
+        <div class="tree-node tn-d">
+          <div class="tn-label">PLAN D</div>
+          <div class="tn-name">顶部 Tab 拆</div>
+          <div class="tn-verdict">✕ 未采纳</div>
+        </div>
+      </div>
+      <div class="tree-arrow">→</div>
+      <div class="tree-node tn-e">
+        <div class="tn-label">PLAN E</div>
+        <div class="tn-name">常用应用</div>
+        <div class="tn-verdict">✓ 落地</div>
+      </div>
+    </div>
+    <div class="tree-legend">
+      <span class="leg-item"><span class="leg-dot" style="background: var(--plan-a)"></span>A · 灵活但赶不上节奏</span>
+      <span class="leg-item"><span class="leg-dot" style="background: var(--plan-b)"></span>B · 结构最优的推荐方案</span>
+      <span class="leg-item"><span class="leg-dot" style="background: var(--plan-c)"></span>C · 大老板版本</span>
+      <span class="leg-item"><span class="leg-dot" style="background: var(--plan-d)"></span>D · 彻底拆分</span>
+      <span class="leg-item"><span class="leg-dot" style="background: var(--plan-e)"></span>E · 最终落地的妥协解</span>
+    </div>
+  </div>
+
+  <!-- ============ PLAN A ============ -->
+  <article class="plan-card is-a">
+    <div class="plan-header">
+      <div class="plan-letter">A</div>
+      <div class="plan-badge is-reject">✕ 退场</div>
+    </div>
+    <h3 class="plan-title">输入框 @ 应用<br><span style="font-weight: 400; color: var(--text-secondary); font-size: 18px;">最轻、最灵活，但生不逢时</span></h3>
+
+    <div class="shot">
+      <div class="shot-tag">图位 04-A1 + 04-A2</div>
+      <div class="shot-label">输入框 @ 应用方案 + 当前 Skills 调用类比图</div>
+      <div class="shot-sub">高亮 @ 触发的应用列表 popover · 标注交互方式同源</div>
+    </div>
+
+    <p class="body-p">在智能工作台的输入框里，支持 <code style="background: var(--bg-soft); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 13px;">@</code> 应用——应用来自「企业应用开发」或「应用广场」，<strong>整体逻辑类似今天调用 Skills 的方式</strong>。</p>
+
+    <div class="plan-section-label">这个方案的优势</div>
+    <ul class="bullets is-pro">
+      <li><strong>干净、轻、灵活度极高</strong>：不需要在产品结构上动任何骨架</li>
+      <li><strong>认知模型清晰</strong>：用户能完全理解这是一种"调用专家 Agent"的能力</li>
+      <li><strong>应用作为自然语言的一部分</strong>：可以被组合、被引用，而不是孤立功能</li>
+      <li><strong>多专家协同</strong>：用户可以同时调用多个应用专家一起解决一个问题，灵活度天花板很高</li>
+    </ul>
+
+    <div class="plan-section-label">为什么这么好的方案没有被采纳</div>
+    <table class="barrier-table">
+      <thead><tr><th>维度</th><th>阻断点</th></tr></thead>
+      <tbody>
+        <tr><td>技术</td><td>现有架构无法支持，赶不上发布节奏</td></tr>
+        <tr><td>产品定位</td><td>产品想要的不是"调用"，而是"直接用"——希望"使用"心智更前置、更显性</td></tr>
+      </tbody>
+    </table>
+
+    <div class="exit-quote">
+      <strong>方案 A 退场。</strong>但它埋下了一个关键伏笔——<br>
+      如果不是"调用"逻辑，那"应用"应该住在产品的哪里？
+    </div>
+  </article>
+
+  <!-- ============ PLAN B ============ -->
+  <article class="plan-card is-b">
+    <div class="plan-header">
+      <div class="plan-letter">B</div>
+      <div class="plan-badge is-pass">★ 我的第一推荐</div>
+    </div>
+    <h3 class="plan-title">把"应用"放进智能工作台<br><span style="font-weight: 400; color: var(--text-secondary); font-size: 18px;">结构最干净的推荐方案</span></h3>
+
+    <div class="shot">
+      <div class="shot-tag">图位 04-B1 + 04-B2</div>
+      <div class="shot-label">智能工作台左侧任务栏中嵌入"应用 / 远程终端 / 定时任务"</div>
+      <div class="shot-sub">标注三类入口的位置 · hover / 展开收起状态</div>
+    </div>
+
+    <div class="plan-section-label">设计推理 · 一步步来</div>
+    <ul class="bullets">
+      <li><strong>Step 1</strong>：既然产品要的是"直接用"，那"应用"的本质就是"使用"。它应该住在承担"使用"心智的地方。</li>
+      <li><strong>Step 2</strong>：扫一眼整个 ADP 平台菜单——除了「智能工作台」，下面所有模块（智能体管理、资源中心、平台管理）全都是搭建/管理链路，是给开发者的。</li>
+      <li><strong>Step 3</strong>：所以平台里真正承担「使用」定位的，只有智能工作台一个地方。<br>→ <em>结论：把"应用"作为智能工作台内部的功能，是最合逻辑的位置。</em></li>
+    </ul>
+
+    <!-- 同构对照 -->
+    <h4 class="h4-block" style="margin-top: 32px;">🌟 惊喜的发现：3 个需求其实是结构同构的</h4>
+    <p class="body-p">正在这个时候，我手上还有另外两个需求——<strong>支持定时任务</strong>、<strong>支持远程终端渠道</strong>。我把它们和"应用"摆在一起观察，发现它们在交互结构上<strong>高度一致</strong>：</p>
+
+    <div class="isomorphism">
+      <table class="iso-table">
+        <thead>
+          <tr>
+            <th style="width: 22%;">类型</th>
+            <th style="width: 32%;">中间层（具体内容）</th>
+            <th>末端（细粒度任务）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>应用</td>
+            <td>金融助手</td>
+            <td>任务 1：问 A 股 · 任务 2：问美股</td>
+          </tr>
+          <tr>
+            <td>远程终端</td>
+            <td>企微渠道</td>
+            <td>任务 1：某个单聊 · 任务 2：某个群聊</td>
+          </tr>
+          <tr>
+            <td>定时任务</td>
+            <td>定时学英语</td>
+            <td>按定时频率，每隔一段触发一次任务</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="iso-conclusion">
+        我把它们抽象为同一种结构——<em>「类型 → 具体内容 → 任务列表」</em>，统一在左侧任务栏里支持展开/收起。<strong>一套结构覆盖三种需求</strong>，避免三个功能各做各的、造成产品体验的碎片化。
+      </div>
+    </div>
+
+    <!-- 2 个待决策问题 -->
+    <h4 class="h4-block" style="margin-top: 32px;">🤔 但这个方案带出了 2 个待决策的问题</h4>
+
+    <div class="plan-section-label">问题 1 · 这些功能入口是否应该固定显示？</div>
+    <div class="shot" style="min-height: 180px;">
+      <div class="shot-tag">图位 04-B4</div>
+      <div class="shot-label">入口固定与否的方案示意</div>
+      <div class="shot-sub">对比 "固定入口" vs "非固定入口" 两种状态</div>
+    </div>
+    <p class="body-p">应用、定时任务、远程终端——它们是常驻菜单，还是用户用到时才出现？</p>
+
+    <div class="plan-section-label">问题 2 · 应用任务、定时任务，要不要进入"最近任务"列表？</div>
+    <div class="shot" style="min-height: 180px;">
+      <div class="shot-tag">图位 04-B5</div>
+      <div class="shot-label">"最近任务"归属问题方案示意</div>
+      <div class="shot-sub">对比"全部混排"vs"重命名 + 应用任务独立"两种思路</div>
+    </div>
+    <p class="body-p">这里有一个<strong>技术约束</strong>需要考虑：</p>
+    <ul class="bullets">
+      <li>「新建任务」走的是<strong>通用 Agent</strong></li>
+      <li>「具体应用」是<strong>配置好模型 / Skills 的独立 Agent</strong></li>
+      <li>技术上<strong>不希望从"新建任务"里能直接创建应用类任务</strong></li>
+    </ul>
+    <p class="body-p" style="margin-top: 12px;">→ 所以这里有两种解法：</p>
+    <ul class="bullets">
+      <li><strong>解法 a</strong>：把应用任务、定时任务都进"最近任务"，用户感知统一</li>
+      <li><strong>解法 b</strong>：把"最近任务"重命名为"普通任务"，让用户理解"新建任务"只能新建普通任务，应用任务独立列表</li>
+    </ul>
+
+    <!-- 大老板质疑 -->
+    <h4 class="h4-block" style="margin-top: 32px;">⚔️ 然后，挑战来了：大老板的根本质疑</h4>
+    <div class="exit-quote" style="border-left-color: var(--plan-c); background: var(--plan-c-soft); font-style: normal;">
+      💬 <strong>"智能工作台的通用智能体，和应用的智能体，根本不是同一个 Agent。怎么能放在同一个页面？"</strong><br><br>
+      这个质疑，是从<strong>技术实现角度</strong>出发的——两个 Agent 是不同的实例、不同的配置、不同的运行逻辑，从工程视角看确实是两件事。
+    </div>
+  </article>
+
+  <!-- ============ 我的反驳 ============ -->
+  <article class="plan-card" style="border-top: 4px solid var(--report-ink); background: var(--bg-page);">
+    <div class="plan-header">
+      <div class="plan-letter" style="color: var(--report-ink);">⚖</div>
+      <div class="plan-badge" style="background: var(--report-ink); color: #fff;">我的反驳</div>
+    </div>
+    <h3 class="plan-title">用户心智 ≠ 技术实现<br><span style="font-weight: 400; color: var(--text-secondary); font-size: 18px;">把视角拉回用户身上</span></h3>
+
+    <div class="viewpoint-compare">
+      <div class="vp-side is-tech">
+        <span class="vp-tag">技术视角</span>
+        <div class="vp-title">Agent A、Agent B<br>是不同实例</div>
+        <p class="vp-text">不同配置、不同模型、不同运行逻辑——从工程角度看，这是<strong>两个独立的系统</strong>，自然不该放在同一个页面。</p>
+      </div>
+      <div class="vp-divider">VS</div>
+      <div class="vp-side is-user">
+        <span class="vp-tag">用户视角</span>
+        <div class="vp-title">这就是一个<br><strong>"干活的页面"</strong></div>
+        <p class="vp-text">用户根本不会理解"工作台里有什么 Agent 概念"——他们只看到<strong>一个功能页面</strong>，处理"普通任务"和"应用任务"，是再自然不过的事。</p>
+      </div>
+    </div>
+
+    <ul class="bullets" style="margin-top: 24px;">
+      <li><strong>用户根本不会理解</strong>"智能工作台里有什么 Agent 概念"——这是一个工程内部的概念，不是用户认知的一部分</li>
+      <li>用户会把智能工作台理解成<strong>一个功能页面</strong>——一个"干活的地方"</li>
+      <li>在这个"干活的地方"，处理"普通任务"和"应用任务"，<strong>是再自然不过的事</strong></li>
+      <li><strong>Agent 之间的差异，是技术实现的细节，不应该外溢到用户认知层</strong></li>
+    </ul>
+
+    <div class="standpoint-quote">
+      <span class="sq-tag">🎯 设计师的关键立场</span><br>
+      这是<strong>交互设计师作为"用户代言人"</strong>的关键时刻——<br>
+      当组织内的讨论开始用<em>技术语言</em>主导产品决策时，<br>
+      <strong>必须有人把视角拉回到用户身上。</strong>
+    </div>
+  </article>
+
+  <!-- ============ PLAN C ============ -->
+  <article class="plan-card is-c">
+    <div class="plan-header">
+      <div class="plan-letter">C</div>
+      <div class="plan-badge is-reject">✕ 强烈反对</div>
+    </div>
+    <h3 class="plan-title">大老板版本<br><span style="font-weight: 400; color: var(--text-secondary); font-size: 18px;">左导航直接铺常用智能体</span></h3>
+
+    <div class="shot">
+      <div class="shot-tag">图位 04-C1</div>
+      <div class="shot-label">大老板提出的"左导航增加常用智能体"方案图</div>
+      <div class="shot-sub">标注"一级导航被应用占用"为产品骨架被侵蚀的区域</div>
+    </div>
+
+    <p class="body-p">在大老板的设想里，解决"应用没有家"这个问题的方法很直接——<strong>在最左侧一级导航中，直接把"常用智能体"铺出来</strong>。</p>
+
+    <div class="plan-section-label">我从三个维度强烈反对</div>
+    <div class="reject-grid">
+      <div class="reject-cell">
+        <div class="rc-tag">维度 01 · 稳定性</div>
+        <div class="rc-name">骨架被侵蚀</div>
+        <div class="rc-desc">一级导航是产品最稳定的"骨架"，承载的是产品核心架构。而应用是用户<strong>可以自由添加 / 删除</strong>的内容——把可变内容放进骨架，<strong>一级导航就不再稳定了</strong>。</div>
+      </div>
+      <div class="reject-cell">
+        <div class="rc-tag">维度 02 · 语义</div>
+        <div class="rc-name">属性错位</div>
+        <div class="rc-desc">应用是<strong>「使用」属性</strong>（我用什么），一级导航承载的是<strong>「功能架构」语义</strong>（产品有什么）。两者属性根本错位。</div>
+      </div>
+      <div class="reject-cell">
+        <div class="rc-tag">维度 03 · 产品认知</div>
+        <div class="rc-name">"ADP 是什么"变模糊</div>
+        <div class="rc-desc">一级导航被应用占满后，会让"ADP 是什么"这件事变得模糊——用户进来看不到平台的核心结构，<strong>只看到一堆别人配的应用</strong>。</div>
+      </div>
+    </div>
+  </article>
+
+  <!-- ============ PLAN D ============ -->
+  <article class="plan-card is-d">
+    <div class="plan-header">
+      <div class="plan-letter">D</div>
+      <div class="plan-badge is-reject">✕ 未被采纳</div>
+    </div>
+    <h3 class="plan-title">与其做 C，不如拆 Tab<br><span style="font-weight: 400; color: var(--text-secondary); font-size: 18px;">从根本定位上重新切分平台</span></h3>
+
+    <div class="exit-quote" style="border-left-color: var(--plan-d); background: var(--plan-d-soft); margin-top: 0; margin-bottom: 20px;">
+      ⏱ 方案 C 和 D 几乎是<strong>同时被提出的</strong>，D 带有"反驳 C"的意味——但更重要的是，D 本身是一种更彻底的结构思路：不是为了应付应用入口的位置问题，而是从<strong>"搭建 vs 使用"这个根本定位</strong>上重新切分平台。
+    </div>
+
+    <div class="shot">
+      <div class="shot-tag">图位 04-D1</div>
+      <div class="shot-label">顶部 Tab 拆分方案图</div>
+      <div class="shot-sub">高亮顶部双 Tab——「构建智能体」和「智能工作台」，标注"使用 / 搭建"分流</div>
+    </div>
+
+    <p class="body-p">与其让一级导航被应用塞满变得不稳定，不如<strong>直接把"构建智能体"和"智能工作台"拆成最顶部的两个 Tab</strong>：</p>
+    <ul class="bullets">
+      <li><strong>「构建智能体」Tab</strong>：搭建 / 管理链路（应用开发、知识库、模型、Skills、平台管理……）</li>
+      <li><strong>「智能工作台」Tab</strong>：纯使用链路（对话、应用、定时任务、远程终端……）</li>
+    </ul>
+
+    <div class="plan-section-label">这个方案的三重价值</div>
+    <div class="triple-value">
+      <div class="tv-cell">
+        <div class="tv-tag">价值 01 · 用户认知</div>
+        <div class="tv-name">真正的"工位"</div>
+        <div class="tv-desc">智能工作台的左侧不再被理解成"通用 Agent 的历史对话列表"，而是真正"使用页面"的一级导航。整个工作台变成一个真正的"工位"，而不是一个混杂的对话窗口。</div>
+      </div>
+      <div class="tv-cell">
+        <div class="tv-tag">价值 02 · 商业价值</div>
+        <div class="tv-name">权限位天然清晰</div>
+        <div class="tv-desc">员工权限位区分清晰——纯使用员工不需要看到管理页面，权限分配天然清晰。</div>
+      </div>
+      <div class="tv-cell">
+        <div class="tv-tag">价值 03 · 未来扩展</div>
+        <div class="tv-name">可独立售卖</div>
+        <div class="tv-desc">若未来要面向纯使用场景的 B 端员工售卖（无智能体搭建场景的客户），结构上很方便整体拆出去单独售卖。</div>
+      </div>
+    </div>
+
+    <div class="exit-quote">
+      <strong>为什么这个方案最终也没被采纳——</strong><br>
+      大老板最终决策：<em>"构建 + 使用 一体，定位上不拆开。"</em> 他坚持 ADP 就是一个完整的产品，从搭建到使用都在一个框架里。
+    </div>
+  </article>
+
+  <!-- ============ PLAN E ============ -->
+  <article class="plan-card is-e">
+    <div class="plan-header">
+      <div class="plan-letter">E</div>
+      <div class="plan-badge is-final">✓ 最终落地</div>
+    </div>
+    <h3 class="plan-title">常用应用作为一级菜单<br><span style="font-weight: 400; color: var(--text-secondary); font-size: 18px;">一个让所有人都能往前走的位置</span></h3>
+
+    <div class="shot">
+      <div class="shot-tag">图位 04-E1</div>
+      <div class="shot-label">最终落地方案图 — 「常用应用」作为一级菜单</div>
+      <div class="shot-sub">标注"常用应用"一级菜单，对比此前方案的差异</div>
+    </div>
+
+    <p class="body-p">在「智能工作台」之外，新增一个<strong>并列的一级菜单——「常用应用」</strong>。</p>
+    <ul class="bullets">
+      <li>用户点击「常用应用」一级菜单后，可以<strong>直接和已构建好的应用进行对话</strong></li>
+      <li>应用列表在这个一级菜单的左侧栏内陈列，结构上保留了 B 方案中"类型→内容→任务"的层级思想</li>
+      <li>既保留了产品的"使用沉淀"诉求 <span style="color: var(--plan-e); font-weight: 600;">✓</span></li>
+      <li>又保持了"构建 + 使用"在同一产品框架下的整体性 <span style="color: var(--plan-e); font-weight: 600;">✓</span></li>
+    </ul>
+
+    <div class="standpoint-quote" style="background: var(--plan-e); margin-top: 28px;">
+      <span class="sq-tag">"妥协方案" ≠ "失败方案"</span><br>
+      它在<strong>产品的定位坚持</strong>、<strong>用户的使用诉求</strong>、<strong>组织内的协同共识</strong>之间，找到了一个 <em style="background: rgba(255,255,255,0.2);">所有人都能往前走的位置</em>。<br><br>
+      而这条决策链上推演过的所有方案——A 的灵活、B 的统一抽象、C 的不稳定问题、D 的彻底拆分——<strong>没有一个是白做的</strong>。它们让最终方案 E 是被<strong>"选出来的"</strong>，而不是<strong>"被拍出来的"</strong>。
+    </div>
+  </article>
+
+</section>
+
+<!-- ============================================================
+     SECTION 05 · 我作为交互设计师，解决了什么
+     ============================================================ -->
+<section class="page" id="sec-05">
+  <div class="sec-num">Section 05 / 设计师价值</div>
+  <h2 class="sec-title">我用设计<br>推动了什么</h2>
+  <p class="sec-lead">不是"我做了哪些页面"，而是"我作为交互设计师，在这次迭代中真正推动了什么"。</p>
+
+  <div class="value-grid">
+    <div class="value-card">
+      <div class="vc-idx">01</div>
+      <div class="vc-tag">VALUE · 推动</div>
+      <div class="vc-name">用可视化方案<br>推动了产品定位的明确</div>
+      <div class="vc-desc">
+        当产品对自己想要什么也不太清楚的时候，<strong>我没有等他们想清楚再画图</strong>，而是反过来——用一版又一版的可视化方案，让所有相关方"看到差异、做出选择"。让<em>"模糊的定位讨论"变成"具体的方案对比"</em>，推动了"使用 vs 调用"、"一体 vs 拆分"、"应用入口在哪"等多个关键定位问题的决策。
+      </div>
+      <div class="vc-tail">→ 早期模糊阶段最稀缺的能力：用方案 push 产品</div>
+    </div>
+
+    <div class="value-card">
+      <div class="vc-idx">02</div>
+      <div class="vc-tag">VALUE · 抽象</div>
+      <div class="vc-name">用结构化抽象<br>统一了 3 个相关需求的交互模式</div>
+      <div class="vc-desc">
+        应用、定时任务、远程终端——看似不相关的 3 个需求，<strong>被我抽象为同一种"类型 → 具体内容 → 任务"结构</strong>，用一套交互模式统一承载。避免了三个功能各做各的、产品体验的碎片化，<em>用户在认知上只需要学习一次</em>。
+      </div>
+      <div class="vc-tail">→ 交互设计的系统性思维：跨需求看到结构</div>
+    </div>
+
+    <div class="value-card">
+      <div class="vc-idx">03</div>
+      <div class="vc-tag">VALUE · 立场</div>
+      <div class="vc-name">站在用户认知视角<br>反驳了技术视角的质疑</div>
+      <div class="vc-desc">
+        当大老板从 Agent 技术差异提出"通用 Agent 和应用 Agent 不能放一起"的质疑时，我从用户心智模型角度论证——<em>"用户不会理解 Agent 概念，只会理解功能页面。Agent 之间的差异是技术实现的细节，不应该外溢到用户认知层"</em>。这是交互设计师作为<strong>"用户代言人"</strong>的关键价值。
+      </div>
+      <div class="vc-tail">→ 当组织开始用技术语言主导决策，必须有人把视角拉回到用户</div>
+    </div>
+
+    <div class="value-card">
+      <div class="vc-idx">04</div>
+      <div class="vc-tag">VALUE · 平衡</div>
+      <div class="vc-name">在多方诉求之间<br>找到了所有人都能往前走的解</div>
+      <div class="vc-desc">
+        最终方案 E，是在多方诉求之间的平衡解：
+      </div>
+      <table class="balance-table">
+        <thead><tr><th>诉求方</th><th>诉求</th><th>满足度</th></tr></thead>
+        <tbody>
+          <tr><td>产品</td><td>使用沉淀的产品形态</td><td class="bt-yes">✓ 满足</td></tr>
+          <tr><td>大老板</td><td>构建+使用一体的定位坚持</td><td class="bt-yes">✓ 满足</td></tr>
+          <tr><td>用户</td><td>心智清晰、入口稳定的使用体验</td><td class="bt-yes">✓ 满足</td></tr>
+          <tr><td>商业</td><td>未来可拆分售卖的空间</td><td class="bt-mid">🟡 留种</td></tr>
+        </tbody>
+      </table>
+      <div class="vc-tail">→ 设计师的协调价值：做"能落地的方案"，而非只做"对的方案"</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 06 · 其他功能
+     ============================================================ -->
+<section class="page" id="sec-06">
+  <div class="sec-num">Section 06 / 其他功能</div>
+  <h2 class="sec-title">4.0 的其他迭代<br>一笔带过</h2>
+  <p class="sec-lead">围绕同一主题：让"使用"这件事，从"能用"走向"好用"，再走向"可沉淀、可流通、可经营"。</p>
+
+  <div class="misc-section">
+    <div class="misc-cat-title">6.1 创建与配置类</div>
+    <div class="misc-grid">
+      <div class="misc-item"><strong>支持对话式创建应用</strong>把"搭建"折叠进"使用"，用户用对话就能完成应用创建</div>
+      <div class="misc-item"><strong>设置项从对话维度改为全局维度</strong>减少重复配置，全局生效更符合用户预期</div>
+      <div class="misc-item"><strong>定时任务</strong>让任务支持周期性自动触发（与核心故事中的统一结构呼应）</div>
+      <div class="misc-item"><strong>远程终端渠道</strong>支持配置远程渠道（如企微），实现远程工作</div>
+    </div>
+
+    <div class="misc-cat-title">6.2 对话与交互优化类</div>
+    <div class="misc-grid">
+      <div class="misc-item"><strong>Skills 管理弹窗 → 轻浮层</strong>从重弹窗改为轻量浮层，降低操作打断感</div>
+      <div class="misc-item"><strong>工具调用消息收起逻辑优化</strong>避免长链路调用挤占阅读视野，主信息更突出</div>
+      <div class="misc-item"><strong>Code 输出样式优化</strong>代码块阅读性、复制体验全面提升</div>
+      <div class="misc-item"><strong>支持 SVG / HTML 渲染</strong>让对话产出能直接可视化呈现，不止文字</div>
+      <div class="misc-item"><strong>支持分享对话</strong>让一次智能对话成为可流通的资产</div>
+    </div>
+
+    <div class="misc-cat-title">6.3 文件能力类</div>
+    <div class="misc-grid">
+      <div class="misc-item"><strong>文件卡片样式优化</strong>信息密度与视觉层级更清晰</div>
+      <div class="misc-item"><strong>文件预览栏功能优化</strong>预览能力从"看一眼"到"沉浸看"</div>
+      <div class="misc-item"><strong>文件支持编辑</strong>让对话产出真正"可用"，不止于"看完即走"</div>
+      <div class="misc-item"><strong>文件支持保存为知识库</strong>打通"对话产出 → 沉淀为资产"的闭环</div>
+    </div>
+
+    <div class="misc-cat-title">6.4 应用能力类</div>
+    <div class="misc-grid">
+      <div class="misc-item"><strong>支持应用评测能力</strong>让开发者能量化应用质量，闭环优化</div>
+      <div class="misc-item"><strong>支持子 Agent</strong>让复杂场景能被结构化拆解，应用能力的天花板被打开</div>
+      <div class="misc-item"><strong>支持应用运营能力</strong>让应用不仅能"上线"，还能"运营"，是产品成熟度的关键一步</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 07 · 结语
+     ============================================================ -->
+<section class="page" id="sec-07">
+  <div class="sec-num">Section 07 / 结语</div>
+
+  <div class="epilogue">
+    <blockquote class="epilogue-quote">
+      4.0 不只是给智能工作台加了几个功能，<br>
+      而是让 ADP 第一次清晰地回答了——<br>
+      <em>"你不只是被搭建出来的，<br>你也是被使用的。"</em>
+    </blockquote>
+
+    <p class="epilogue-sig">
+      而作为交互设计师，<br>
+      我做的不只是画页面，<br>
+      <strong>我在帮一个产品，找到它新的定位。</strong>
+    </p>
+  </div>
+
+  <div class="shot" style="min-height: 200px; margin-top: 60px;">
+    <div class="shot-tag">图位 07-01</div>
+    <div class="shot-label">结尾视觉</div>
+    <div class="shot-sub">"使用沉淀后的最终态"截图 / 抽象设计语言 · 留白要足够</div>
+  </div>
+</section>
+
+</main>
+
+<script>
+// 滚动高亮 nav
+const sections = document.querySelectorAll('.page');
+const navLinks = document.querySelectorAll('.report-nav a');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && entry.intersectionRatio > 0.25) {
+      const id = entry.target.id;
+      navLinks.forEach(link => {
+        link.classList.toggle('is-active', link.getAttribute('href') === '#' + id);
+      });
+    }
+  });
+}, { threshold: [0.25] });
+sections.forEach(sec => observer.observe(sec));
+</script>
+
+</body>
+</html>
